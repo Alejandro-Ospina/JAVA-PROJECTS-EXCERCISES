@@ -18,7 +18,7 @@ public class Ejercicio18 {
     }
     
     public static int[][] matrizTranspuesta(int[][] matriz){
-        int[][] matTranspuesta = matriz;
+        int[][] matTranspuesta = new int [matriz.length][matriz.length];
         for(int i = 0; i < matriz.length; i++){
             for(int j = 0; j < matriz[i].length; j++){
                 matTranspuesta[i][j] = matriz[j][i];
