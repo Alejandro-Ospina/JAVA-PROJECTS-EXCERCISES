@@ -29,15 +29,15 @@ public class Ejercicio21 {
                             posicionX = i;
                             posicionY = j;
                         }
-                        if (match == indexMatriz.length*indexMatriz.length-1){
+                        if (match == indexMatriz.length*indexMatriz.length){
                             System.out.println("Matriz encontrada");
-                            System.out.println("Posicion a partir de la cual se halla la submatriz: (" + posicionX + "," + (posicionY) + ")");
+                            System.out.println("Posicion a partir de la cual se halla la submatriz: (" + posicionX + "," + posicionY + ")");
                             break;
                         }
                     }
                 }                                
             }                       
-            if(match != indexMatriz.length*indexMatriz.length-1){
+            if(match != indexMatriz.length*indexMatriz.length){
                 match = 0;
             }else {
                 break;
@@ -51,7 +51,7 @@ public class Ejercicio21 {
                 finJ = indexMatriz.length;
             }            
         }
-        if (match != indexMatriz.length*indexMatriz.length-1){
+        if (match != indexMatriz.length*indexMatriz.length){
             System.out.println("Matriz NO encontrada");
         }
     }
@@ -68,12 +68,11 @@ public class Ejercicio21 {
             {98, 45, 34, 23, 32, 56, 74, 16, 19, 18},
             {24, 67, 97, 46, 87, 13, 67, 89, 93, 24},
             {21, 68, 78, 97, 90, 67, 12, 41, 65, 12}
-        };
-        
-        int [][] matrizIndex = {
+        };       
+        int [][] matrizIndex = {            
             {36,  5, 67},
             {89, 90, 75},
-            {14, 22, 26},
+            {14, 22, 26}
         };       
         contieneMatriz(matrizGeneral, matrizIndex);
     }
