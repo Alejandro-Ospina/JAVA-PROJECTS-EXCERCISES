@@ -55,7 +55,6 @@ public class Ejercicio21 {
             System.out.println("Matriz NO encontrada");
         }
     }
-
     public static void main(String[] args) {
         int[][] matrizGeneral = {
             { 1, 26, 36, 47,  5,  6, 72, 81, 95, 10},
