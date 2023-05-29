@@ -3,6 +3,8 @@ package numeroromano;
 import java.util.*;
 
 //  @author new53
+/* Construir un programa el cual solicite al usuario un número romano, 
+y una función retorne el valor entero del número romano ingresado */
 public class NumeroRomano {
     
     public static int transformarRomano(String numeroRomano){
@@ -36,5 +38,4 @@ public class NumeroRomano {
         String romano = entrada.next().toLowerCase();
         System.out.println(romano.toUpperCase() + " representa el número: " + transformarRomano(romano));
     }
-
 }

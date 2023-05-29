@@ -2,6 +2,8 @@
 package numeroromano;
 import java.util.*;
 //  @author new53
+/* Construir un programa que solicite al usuario un número entero entre 1 y 3999, 
+y una función retorne el número romano del número entero ingresado */
 public class NumeroARomano {
     
     public static String transformarNumeroARomano(int numero){
