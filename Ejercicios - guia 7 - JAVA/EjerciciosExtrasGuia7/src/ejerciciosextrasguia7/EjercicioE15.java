@@ -25,7 +25,7 @@ public class EjercicioE15 {
                 System.out.println("Suma: " + sumar(numero1,numero2));
                 break;
             case 2:
-                System.out.println("Resta: " + sumar(numero1,numero2));
+                System.out.println("Resta: " + restar(numero1,numero2));
                 break;
             case 3:
                 System.out.println("Multiplicación: " + multiplicar(numero1,numero2));
@@ -50,12 +50,12 @@ public class EjercicioE15 {
         return numero1*numero2;
     }
     
-    public static double dividir(int numero1, int numero2){
+    public static String dividir(int numero1, int numero2){
         try{
-            return (double) numero1/numero2;
+            return Double.toString((double) numero1/numero2);
         }
-        catch(Exception e){
-            return 0d;
+        catch(ArithmeticException excepcion){
+            return excepcion.getMessage();
         }
     }
 }
