@@ -13,19 +13,15 @@ El cambio de divisas es:
 * 129.852 yenes es un 1 € */
 public class Ejercicio14 {
     
-    public static void convertirEuros(double euros, String moneda){
-        switch(moneda){
-            case "l":
-                System.out.println(euros + " € equivale a " + (euros*0.86) + " libras");
+    public static void convertirEuros(double euros, String moneda){        
+        String[][] matriz = {{"l","0.86"},
+                             {"d","1.2811"},
+                             {"y","129.852"}};
+        for(int i=0; i<matriz.length; i++){
+            if(matriz[i][0].equalsIgnoreCase(moneda)){
+                System.out.println(euros + " euros equivale a: " + (Double.parseDouble(matriz[i][1]) * euros) + matriz[i][0]);
                 break;
-            case "d":
-                System.out.println(euros + " € equivale a $" + (euros*1.28611) + "  USD");
-                break;
-            case "y":
-                System.out.println(euros + " € equivale a " + (euros*129.852) + " yenes");
-                break;
-            default:
-                System.out.println("¡Not converted!");
+            }
         }
     }
 
