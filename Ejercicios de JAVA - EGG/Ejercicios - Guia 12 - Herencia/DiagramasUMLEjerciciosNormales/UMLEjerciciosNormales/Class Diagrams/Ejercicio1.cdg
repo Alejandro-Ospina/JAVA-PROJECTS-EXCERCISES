@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejercicio1">
+  <ClassDiagramComponents>
+    <Class name="Animal" package="Ejercicio1" visibility="public" xPosition="444.0" yPosition="29.0">
+      <Fields>
+        <Field name="animalName" type="String" visibility="protected"/>
+        <Field name="animalAge" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="animalName"/>
+          <Argument type="String" name="food"/>
+          <Argument type="String" name="breed"/>
+          <Argument type="int" name="animalAge"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="feedingAnimal" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Cat" package="Ejercicio1" visibility="public" xPosition="806.0" yPosition="262.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="animalName"/>
+          <Argument type="String" name="food"/>
+          <Argument type="String" name="breed"/>
+          <Argument type="int" name="animalAge"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="feedingAnimal" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Dog" package="Ejercicio1" visibility="public" xPosition="37.0" yPosition="262.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="animalName"/>
+          <Argument type="String" name="food"/>
+          <Argument type="String" name="breed"/>
+          <Argument type="int" name="animalAge"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="feedingAnimal" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Ejercicio1" package="Ejercicio1" visibility="public" xPosition="147.0" yPosition="57.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Horse" package="Ejercicio1" visibility="public" xPosition="448.0" yPosition="426.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="animalName"/>
+          <Argument type="String" name="food"/>
+          <Argument type="String" name="breed"/>
+          <Argument type="int" name="animalAge"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="feedingAnimal" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Ejercicio1.Horse" target="Ejercicio1.Animal"/>
+    <IsRelation name="is" source="Ejercicio1.Cat" target="Ejercicio1.Animal"/>
+    <IsRelation name="is" source="Ejercicio1.Dog" target="Ejercicio1.Animal"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

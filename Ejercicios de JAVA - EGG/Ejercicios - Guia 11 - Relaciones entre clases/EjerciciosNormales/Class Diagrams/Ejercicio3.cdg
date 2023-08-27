@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejercicio3">
+  <ClassDiagramComponents>
+    <Class name="CardsDeck" package="Ejercicio3" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="cards" type="List&lt;String&gt;" visibility="private" isStatic="true"/>
+        <Field name="cardsRemoved" type="List&lt;String&gt;" visibility="private" isStatic="true"/>
+        <Field name="read" type="Scanner" visibility="private" isStatic="true"/>
+        <Field name="cardNumber" type="CardsNumber" visibility="private"/>
+        <Field name="cardSuit" type="CardsSuit" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="fillDeck" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="shuffleDeck" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="nextCard" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="availableCards" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="giveCards" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="givenCards" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="actualDeck" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Ejercicio3" package="Ejercicio3" visibility="public" xPosition="33.0" yPosition="352.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Enum name="CardsNumber" package="Ejercicio3" visibility="public" xPosition="381.0" yPosition="168.0">
+      <Literals>
+        <Literal name="One"/>
+        <Literal name="Two"/>
+        <Literal name="Three"/>
+        <Literal name="Four"/>
+        <Literal name="Five"/>
+        <Literal name="Six"/>
+        <Literal name="Seven"/>
+        <Literal name="Ten"/>
+        <Literal name="Eleven"/>
+        <Literal name="Twelve"/>
+      </Literals>
+    </Enum>
+    <Enum name="CardsSuit" package="Ejercicio3" visibility="public" xPosition="381.0" yPosition="-3.0">
+      <Literals>
+        <Literal name="Swords"/>
+        <Literal name="Batons"/>
+        <Literal name="Coins"/>
+        <Literal name="Cups"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="cardSuit" source="Ejercicio3.CardsDeck" target="Ejercicio3.CardsSuit" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cardNumber" source="Ejercicio3.CardsDeck" target="Ejercicio3.CardsNumber" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

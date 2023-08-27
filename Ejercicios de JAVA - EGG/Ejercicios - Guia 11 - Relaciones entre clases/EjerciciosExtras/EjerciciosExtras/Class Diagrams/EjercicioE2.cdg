@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EjercicioE2">
+  <ClassDiagramComponents>
+    <Class name="Cinema" package="EjercicioE2" visibility="public" xPosition="83.0" yPosition="10.0">
+      <Fields>
+        <Field name="movie" type="Movie" visibility="private"/>
+        <Field name="room" type="String" visibility="private" isFinal="true"/>
+        <Field name="viewer" type="List&lt;Viewer&gt;" visibility="private"/>
+        <Field name="roomPrice" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Movie" name="movie"/>
+          <Argument type="List&lt;Viewer&gt;" name="viewer"/>
+          <Argument type="double" name="roomPrice"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMovie" returnType="Movie" visibility="public"/>
+        <Method name="setMovie" returnType="void" visibility="public">
+          <Argument type="Movie" name="movie"/>
+        </Method>
+        <Method name="getViewer" returnType="List&lt;Viewer&gt;" visibility="public"/>
+        <Method name="getRoomPrice" returnType="double" visibility="public"/>
+        <Method name="setRoomPrice" returnType="void" visibility="public">
+          <Argument type="double" name="roomPrice"/>
+        </Method>
+        <Method name="getRoom" returnType="String[][]" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EjercicioE2" package="EjercicioE2" visibility="public" xPosition="735.0" yPosition="369.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Movie" package="EjercicioE2" visibility="public" xPosition="649.0" yPosition="1.0">
+      <Fields>
+        <Field name="movieName" type="String" visibility="private"/>
+        <Field name="duration" type="double" visibility="private"/>
+        <Field name="minAge" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="movieName"/>
+          <Argument type="String" name="directorName"/>
+          <Argument type="double" name="duration"/>
+          <Argument type="int" name="minAge"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMovieName" returnType="String" visibility="public"/>
+        <Method name="setMovieName" returnType="void" visibility="public">
+          <Argument type="String" name="movieName"/>
+        </Method>
+        <Method name="getDirectorName" returnType="String" visibility="public"/>
+        <Method name="setDirectorName" returnType="void" visibility="public">
+          <Argument type="String" name="directorName"/>
+        </Method>
+        <Method name="getDuration" returnType="double" visibility="public"/>
+        <Method name="setDuration" returnType="void" visibility="public">
+          <Argument type="double" name="duration"/>
+        </Method>
+        <Method name="getMinAge" returnType="int" visibility="public"/>
+        <Method name="setMinAge" returnType="void" visibility="public">
+          <Argument type="int" name="minAge"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Service" package="EjercicioE2" visibility="public" xPosition="712.0" yPosition="491.0">
+      <Fields>
+        <Field name="cinema" type="Cinema" visibility="private" isStatic="true"/>
+        <Field name="viewersNotAllowed" type="List&lt;Viewer&gt;" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="read" type="Scanner" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="generateViewers" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="generateMovie" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="roomPrice" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="allowedViewers" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="roomInitialize" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="locateViewerRandomly" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="showLocationDetails" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="showViewerDetails" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Viewer" package="EjercicioE2" visibility="public" xPosition="82.0" yPosition="432.0">
+      <Fields>
+        <Field name="viewerName" type="String" visibility="private"/>
+        <Field name="viewerAge" type="int" visibility="private"/>
+        <Field name="viewerCash" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="viewerName"/>
+          <Argument type="int" name="viewerAge"/>
+          <Argument type="double" name="viewerCash"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getViewerName" returnType="String" visibility="public"/>
+        <Method name="setViewerName" returnType="void" visibility="public">
+          <Argument type="String" name="viewerName"/>
+        </Method>
+        <Method name="getViewerAge" returnType="int" visibility="public"/>
+        <Method name="setViewerAge" returnType="void" visibility="public">
+          <Argument type="int" name="viewerAge"/>
+        </Method>
+        <Method name="getViewerCash" returnType="double" visibility="public"/>
+        <Method name="setViewerCash" returnType="void" visibility="public">
+          <Argument type="double" name="viewerCash"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="viewer" source="EjercicioE2.Cinema" target="EjercicioE2.Viewer" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Viewer&gt;"/>
+    <UseRelation source="EjercicioE2.Cinema" target="EjercicioE2.Movie" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="movie" source="EjercicioE2.Cinema" target="EjercicioE2.Movie" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="EjercicioE2.Cinema" target="EjercicioE2.Viewer" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="cinema" source="EjercicioE2.Service" target="EjercicioE2.Cinema" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="viewersNotAllowed" source="EjercicioE2.Service" target="EjercicioE2.Viewer" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Viewer&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

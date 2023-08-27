@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejercicio1">
+  <ClassDiagramComponents>
+    <Class name="Dog" package="Ejercicio1" visibility="public" xPosition="29.0" yPosition="20.0">
+      <Fields>
+        <Field name="name" type="String" visibility="package"/>
+        <Field name="age" type="int" visibility="package"/>
+        <Field name="size" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="breed"/>
+          <Argument type="int" name="age"/>
+          <Argument type="double" name="size"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getBreed" returnType="String" visibility="public"/>
+        <Method name="setBreed" returnType="void" visibility="public">
+          <Argument type="String" name="breed"/>
+        </Method>
+        <Method name="getAge" returnType="int" visibility="public"/>
+        <Method name="setAge" returnType="void" visibility="public">
+          <Argument type="int" name="age"/>
+        </Method>
+        <Method name="getSize" returnType="double" visibility="public"/>
+        <Method name="setSize" returnType="void" visibility="public">
+          <Argument type="double" name="size"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Ejercicio1" package="Ejercicio1" visibility="public" xPosition="153.0" yPosition="426.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Person" package="Ejercicio1" visibility="public" xPosition="508.0" yPosition="20.0">
+      <Fields>
+        <Field name="name" type="String" visibility="private"/>
+        <Field name="age" type="int" visibility="private"/>
+        <Field name="id" type="long" visibility="private"/>
+        <Field name="dogs" type="List&lt;Dog&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="name"/>
+          <Argument type="String" name="surname"/>
+          <Argument type="int" name="age"/>
+          <Argument type="long" name="id"/>
+          <Argument type="List&lt;Dog&gt;" name="dogs"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getName" returnType="String" visibility="public"/>
+        <Method name="setName" returnType="void" visibility="public">
+          <Argument type="String" name="name"/>
+        </Method>
+        <Method name="getSurname" returnType="String" visibility="public"/>
+        <Method name="setSurname" returnType="void" visibility="public">
+          <Argument type="String" name="surname"/>
+        </Method>
+        <Method name="getAge" returnType="int" visibility="public"/>
+        <Method name="setAge" returnType="void" visibility="public">
+          <Argument type="int" name="age"/>
+        </Method>
+        <Method name="getId" returnType="long" visibility="public"/>
+        <Method name="setId" returnType="void" visibility="public">
+          <Argument type="long" name="id"/>
+        </Method>
+        <Method name="getDogs" returnType="List&lt;Dog&gt;" visibility="public"/>
+        <Method name="setDogs" returnType="void" visibility="public">
+          <Argument type="List&lt;Dog&gt;" name="dogs"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Service" package="Ejercicio1" visibility="public" xPosition="598.0" yPosition="468.0">
+      <Fields>
+        <Field name="read" type="Scanner" visibility="private" isStatic="true"/>
+        <Field name="people" type="List&lt;Person&gt;" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="createPerson" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="showPersonDetails" returnType="List&lt;Person&gt;" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="people" source="Ejercicio1.Service" target="Ejercicio1.Person" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Person&gt;"/>
+    <UseRelation source="Ejercicio1.Service" target="Ejercicio1.Person" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="Ejercicio1.Person" target="Ejercicio1.Dog" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="dogs" source="Ejercicio1.Person" target="Ejercicio1.Dog" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Dog&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

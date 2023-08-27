@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejercicio2">
+  <ClassDiagramComponents>
+    <Class name="Ejercicio2" package="Ejercicio2" visibility="public" xPosition="52.0" yPosition="1.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Game" package="Ejercicio2" visibility="public" xPosition="349.0" yPosition="1.0">
+      <Fields>
+        <Field name="players" type="ArrayList&lt;Player&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="fillGame" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="round" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Player" package="Ejercicio2" visibility="public" xPosition="331.0" yPosition="198.0">
+      <Fields>
+        <Field name="id" type="int" visibility="private"/>
+        <Field name="player" type="String" visibility="private"/>
+        <Field name="isWet" type="boolean" visibility="private"/>
+        <Field name="players" type="ArrayList&lt;Player&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="id"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="numberOfPlayers" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="shoot" returnType="boolean" visibility="public"/>
+        <Method name="listOfPlayers" returnType="ArrayList&lt;Player&gt;" visibility="public" isStatic="true"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="WaterWeapon" package="Ejercicio2" visibility="public" xPosition="40.0" yPosition="189.0">
+      <Fields>
+        <Field name="barrelPosition" type="int" visibility="private" isStatic="true"/>
+        <Field name="waterBarrelPosition" type="int" visibility="private" isStatic="true"/>
+        <Field name="players" type="ArrayList&lt;Player&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getBarrelPosition" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="getWaterBarrelPosition" returnType="int" visibility="public" isStatic="true"/>
+        <Method name="fillWeapon" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="toGetWet" returnType="boolean" visibility="public" isStatic="true"/>
+        <Method name="nextSpirt" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="weaponDetails" returnType="String" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="players" source="Ejercicio2.Player" target="Ejercicio2.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Player&gt;"/>
+    <HasRelation name="players" source="Ejercicio2.Game" target="Ejercicio2.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Player&gt;"/>
+    <HasRelation name="players" source="Ejercicio2.WaterWeapon" target="Ejercicio2.Player" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Player&gt;"/>
+    <UseRelation source="Ejercicio2.Player" target="Ejercicio2.Player" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

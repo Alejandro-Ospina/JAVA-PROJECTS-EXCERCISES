@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EjercicioE3">
+  <ClassDiagramComponents>
+    <Class name="GestionIntegralClientes" package="" visibility="public" xPosition="65.0" yPosition="-4.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="documento" type="long" visibility="private"/>
+        <Field name="email" type="String" visibility="private"/>
+        <Field name="domicilio" type="String" visibility="private"/>
+        <Field name="telefono" type="long" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="long" name="doumento"/>
+          <Argument type="String" name="email"/>
+          <Argument type="String" name="domicilio"/>
+          <Argument type="long" name="telefono"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setNombre" returnType="String" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="String" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setDocumento" returnType="long" visibility="public">
+          <Argument type="long" name="documento"/>
+        </Method>
+        <Method name="getDocumento" returnType="long" visibility="public"/>
+        <Method name="setEmail" returnType="String" visibility="public">
+          <Argument type="String" name="email"/>
+        </Method>
+        <Method name="getEmail" returnType="String" visibility="public"/>
+        <Method name="setDomicilio" returnType="String" visibility="public">
+          <Argument type="String" name="domicilio"/>
+        </Method>
+        <Method name="getDomicilio" returnType="String" visibility="public"/>
+        <Method name="setTelefono" returnType="void" visibility="public"/>
+        <Method name="getTelefono" returnType="long" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="GestionVehiculos" package="" visibility="public" xPosition="429.0" yPosition="0.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="anio" type="int" visibility="private"/>
+        <Field name="numeroMotor" type="int" visibility="private"/>
+        <Field name="numeroChasis" type="int" visibility="private"/>
+        <Field name="color" type="String" visibility="private"/>
+        <Field name="tipo" type="TipoVehiculo" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="marca"/>
+          <Argument type="String" name="modelo"/>
+          <Argument type="int" name="anio"/>
+          <Argument type="int" name="numeroMotor"/>
+          <Argument type="int" name="numeroChasis"/>
+          <Argument type="String" name="color"/>
+          <Argument type="String" name="tipo"/>
+        </Constructor>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="GestionPolizas" package="" visibility="public" xPosition="429.0" yPosition="178.0">
+      <Fields>
+        <Field name="cliente" type="GestionIntegralClientes" visibility="private"/>
+        <Field name="vehiculo" type="GestionVehiculos" visibility="private"/>
+        <Field name="numeroPoliza" type="int" visibility="private"/>
+        <Field name="fechaInicio" type="LocalDate" visibility="private"/>
+        <Field name="fechaFin" type="LocalDate" visibility="private"/>
+        <Field name="cantidadCuotas" type="int" visibility="private"/>
+        <Field name="formaPago" type="String" visibility="private"/>
+        <Field name="montoTotalAsegurado" type="double" visibility="private"/>
+        <Field name="incluyeGranizo" type="boolean" visibility="private"/>
+        <Field name="MontoMaximoGranizo" type="double" visibility="private"/>
+        <Field name="tipoCobertura" type="TipoCobertura" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Enum name="TipoVehiculo" package="" visibility="public" xPosition="790.0" yPosition="16.0">
+      <Literals>
+        <Literal name="CAMIONETA"/>
+        <Literal name="SEDÁN"/>
+        <Literal name="SPORT"/>
+        <Literal name="NAKED"/>
+      </Literals>
+    </Enum>
+    <Enum name="TipoCobertura" package="" visibility="public" xPosition="790.0" yPosition="232.0">
+      <Literals>
+        <Literal name="TOTAL"/>
+        <Literal name="CONTRA TERCEROS"/>
+        <Literal name="PARCIAL"/>
+      </Literals>
+    </Enum>
+    <Class name="GestionCuotas" package="" visibility="public" xPosition="65.0" yPosition="263.0">
+      <Fields>
+        <Field name="numeroCuota" type="int" visibility="private"/>
+        <Field name="montoTotalCuota" type="double" visibility="private"/>
+        <Field name="cuotaPagada" type="double" visibility="private"/>
+        <Field name="fechaVencimiento" type="LocalDate" visibility="private"/>
+        <Field name="formaPago" type="FormasPago" visibility="private"/>
+        <Field name="listaPolizas" type="List&lt;GestionPolizas&gt;" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Enum name="FormasPago" package="" visibility="public" xPosition="713.0" yPosition="391.0">
+      <Literals>
+        <Literal name="EFECTIVO"/>
+        <Literal name="TRANSFERENCIA"/>
+        <Literal name="TARJETA DÉBITO"/>
+        <Literal name="TARJETA CRÉDITO"/>
+        <Literal name="PSE"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tipo" source="GestionVehiculos" target="TipoVehiculo" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="cliente" source="GestionPolizas" target="GestionIntegralClientes" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="vehiculo" source="GestionPolizas" target="GestionVehiculos" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="formaDePago" source="GestionCuotas" target="FormasPago" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="cobertura" source="GestionPolizas" target="TipoCobertura" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="polizas" source="GestionCuotas" target="GestionPolizas" type="Default" sourceCardinality="0..1" targetCardinality="1..*" collectionType="List"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
