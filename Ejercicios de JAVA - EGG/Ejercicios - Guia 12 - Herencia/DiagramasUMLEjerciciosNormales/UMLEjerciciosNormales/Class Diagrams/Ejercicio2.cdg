@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejercicio2">
+  <ClassDiagramComponents>
+    <Class name="Ejercicio2" package="Ejercicio2" visibility="public" xPosition="547.0" yPosition="292.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Electrodomestic" package="Ejercicio2" visibility="public" xPosition="35.0" yPosition="-57.0">
+      <Fields>
+        <Field name="price" type="double" visibility="protected"/>
+        <Field name="color" type="String" visibility="protected"/>
+        <Field name="weight" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="double" name="price"/>
+          <Argument type="String" name="color"/>
+          <Argument type="String" name="loadType"/>
+          <Argument type="int" name="weight"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPrice" returnType="double" visibility="public"/>
+        <Method name="setPrice" returnType="void" visibility="public">
+          <Argument type="double" name="price"/>
+        </Method>
+        <Method name="getColor" returnType="String" visibility="public"/>
+        <Method name="setColor" returnType="void" visibility="public">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="getLoadType" returnType="String" visibility="public"/>
+        <Method name="setLoadType" returnType="void" visibility="public">
+          <Argument type="String" name="loadType"/>
+        </Method>
+        <Method name="getWeight" returnType="int" visibility="public"/>
+        <Method name="setWeight" returnType="void" visibility="public">
+          <Argument type="int" name="weight"/>
+        </Method>
+        <Method name="probeLoadType" returnType="void" visibility="private">
+          <Argument type="char" name="load"/>
+        </Method>
+        <Method name="probeColor" returnType="void" visibility="private">
+          <Argument type="String" name="color"/>
+        </Method>
+        <Method name="createElectrodomestic" returnType="void" visibility="public"/>
+        <Method name="finalPrice" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="TV" package="Ejercicio2" visibility="public" xPosition="75.0" yPosition="-70.0">
+      <Fields>
+        <Field name="resolution" type="int" visibility="private"/>
+        <Field name="TDTsintonizer" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="resolution"/>
+          <Argument type="boolean" name="TDTsintonizer"/>
+          <Argument type="double" name="price"/>
+          <Argument type="String" name="color"/>
+          <Argument type="String" name="loadType"/>
+          <Argument type="int" name="weight"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getResolution" returnType="int" visibility="public"/>
+        <Method name="setResolution" returnType="void" visibility="public">
+          <Argument type="int" name="resolution"/>
+        </Method>
+        <Method name="isTDTsintonizer" returnType="boolean" visibility="public"/>
+        <Method name="setTDTsintonizer" returnType="void" visibility="public">
+          <Argument type="boolean" name="TDTsintonizer"/>
+        </Method>
+        <Method name="createTV" returnType="void" visibility="public"/>
+        <Method name="finalPrice" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="WashingMachine" package="Ejercicio2" visibility="public" xPosition="547.0" yPosition="34.0">
+      <Fields>
+        <Field name="loadCapacity" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="loadCapacity"/>
+          <Argument type="double" name="price"/>
+          <Argument type="String" name="color"/>
+          <Argument type="String" name="loadType"/>
+          <Argument type="int" name="weight"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getLoadCapacity" returnType="int" visibility="public"/>
+        <Method name="setLoadCapacity" returnType="void" visibility="public">
+          <Argument type="int" name="loadCapacity"/>
+        </Method>
+        <Method name="createWashingMachine" returnType="void" visibility="public"/>
+        <Method name="finalPrice" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Enum name="Colors" package="Ejercicio2" visibility="public" xPosition="101.0" yPosition="292.0">
+      <Literals>
+        <Literal name="White"/>
+        <Literal name="Black"/>
+        <Literal name="red"/>
+        <Literal name="blue"/>
+        <Literal name="Gray"/>
+      </Literals>
+    </Enum>
+    <Enum name="LoadType" package="Ejercicio2" visibility="public" xPosition="288.0" yPosition="271.0">
+      <Literals>
+        <Literal name="A"/>
+        <Literal name="B"/>
+        <Literal name="C"/>
+        <Literal name="D"/>
+        <Literal name="E"/>
+        <Literal name="F"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Ejercicio2.WashingMachine" target="Ejercicio2.Electrodomestic"/>
+    <IsRelation name="is" source="Ejercicio2.TV" target="Ejercicio2.Electrodomestic"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

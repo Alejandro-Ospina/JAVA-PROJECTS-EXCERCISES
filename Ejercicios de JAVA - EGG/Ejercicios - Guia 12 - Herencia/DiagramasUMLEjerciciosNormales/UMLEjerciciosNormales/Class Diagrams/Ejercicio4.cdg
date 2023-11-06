@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejercicio4">
+  <ClassDiagramComponents>
+    <Class name="Circle" package="Ejercicio4" visibility="public" xPosition="22.0" yPosition="31.0">
+      <Fields>
+        <Field name="radius" type="double" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="double" name="radius"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getRadius" returnType="double" visibility="public"/>
+        <Method name="setRadius" returnType="void" visibility="public">
+          <Argument type="double" name="radius"/>
+        </Method>
+        <Method name="area" returnType="double" visibility="public"/>
+        <Method name="perimeter" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Ejercicio4" package="Ejercicio4" visibility="public" xPosition="355.0" yPosition="247.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Rectangle" package="Ejercicio4" visibility="public" xPosition="727.0" yPosition="3.0">
+      <Fields>
+        <Field name="base" type="double" visibility="private"/>
+        <Field name="high" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="double" name="base"/>
+          <Argument type="double" name="high"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getBase" returnType="double" visibility="public"/>
+        <Method name="setBase" returnType="void" visibility="public">
+          <Argument type="double" name="base"/>
+        </Method>
+        <Method name="getHigh" returnType="double" visibility="public"/>
+        <Method name="setHigh" returnType="void" visibility="public">
+          <Argument type="double" name="high"/>
+        </Method>
+        <Method name="area" returnType="double" visibility="public"/>
+        <Method name="perimeter" returnType="double" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="GeometricFigures" package="Ejercicio4" visibility="public" xPosition="372.0" yPosition="84.0">
+      <Methods>
+        <Method name="area" returnType="double" visibility="public"/>
+        <Method name="perimeter" returnType="double" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Ejercicio4.Rectangle" target="Ejercicio4.GeometricFigures"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="Ejercicio4.Circle" target="Ejercicio4.GeometricFigures"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

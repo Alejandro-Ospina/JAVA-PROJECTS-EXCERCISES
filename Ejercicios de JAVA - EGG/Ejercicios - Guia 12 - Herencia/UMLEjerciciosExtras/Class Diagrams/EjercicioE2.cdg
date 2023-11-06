@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EjercicioE2">
+  <ClassDiagramComponents>
+    <Class name="Building" package="EjercicioE2" visibility="public" isAbstract="true" xPosition="49.0" yPosition="30.0">
+      <Fields>
+        <Field name="widht" type="double" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="widht"/>
+          <Argument type="double" name="lenght"/>
+          <Argument type="double" name="high"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="calculateSurface" returnType="double" visibility="public" isAbstract="true"/>
+        <Method name="calculateVolume" returnType="double" visibility="public" isAbstract="true"/>
+        <Method name="toString" returnType="String" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="EjercicioE2" package="EjercicioE2" visibility="public" xPosition="385.0" yPosition="183.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="OfficeBuilding" package="EjercicioE2" visibility="public" xPosition="-449.0" yPosition="282.0">
+      <Fields>
+        <Field name="officeRoomNumber" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="officeRoomNumber"/>
+          <Argument type="int" name="peoplePerOfficeRoom"/>
+          <Argument type="int" name="floorNumbers"/>
+          <Argument type="double" name="widht"/>
+          <Argument type="double" name="lenght"/>
+          <Argument type="double" name="high"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getOfficeRoomNumber" returnType="int" visibility="public"/>
+        <Method name="setOfficeRoomNumber" returnType="void" visibility="public">
+          <Argument type="int" name="officeRoomNumber"/>
+        </Method>
+        <Method name="getPeoplePerOfficeRoom" returnType="int" visibility="public"/>
+        <Method name="setPeoplePerOfficeRoom" returnType="void" visibility="public">
+          <Argument type="int" name="peoplePerOfficeRoom"/>
+        </Method>
+        <Method name="getFloorNumbers" returnType="int" visibility="public"/>
+        <Method name="setFloorNumbers" returnType="void" visibility="public">
+          <Argument type="int" name="floorNumbers"/>
+        </Method>
+        <Method name="peopleNumber" returnType="void" visibility="public"/>
+        <Method name="calculateSurface" returnType="double" visibility="public"/>
+        <Method name="calculateVolume" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Service" package="EjercicioE2" visibility="public" xPosition="385.0" yPosition="353.0">
+      <Fields>
+        <Field name="buildings" type="ArrayList&lt;Building&gt;" visibility="public" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="createBuildings" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="buildingDetails" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="buildingSurfacesVolumes" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="peopleNumberS" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="roofedUnroofed" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="SportCenterBuilding" package="EjercicioE2" visibility="public" xPosition="385.0" yPosition="20.0">
+      <Fields>
+        <Field name="nameBuilding" type="String" visibility="private"/>
+        <Field name="roof" type="RoofBuilding" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nameBuilding"/>
+          <Argument type="RoofBuilding" name="roof"/>
+          <Argument type="double" name="widht"/>
+          <Argument type="double" name="lenght"/>
+          <Argument type="double" name="high"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNameBuilding" returnType="String" visibility="public"/>
+        <Method name="setNameBuilding" returnType="void" visibility="public">
+          <Argument type="String" name="nameBuilding"/>
+        </Method>
+        <Method name="getRoof" returnType="RoofBuilding" visibility="public"/>
+        <Method name="setRoof" returnType="void" visibility="public">
+          <Argument type="RoofBuilding" name="roof"/>
+        </Method>
+        <Method name="calculateSurface" returnType="double" visibility="public"/>
+        <Method name="calculateVolume" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Enum name="RoofBuilding" package="EjercicioE2" visibility="public" xPosition="667.0" yPosition="40.0">
+      <Literals>
+        <Literal name="Roofed"/>
+        <Literal name="Unroofed"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="EjercicioE2.SportCenterBuilding" target="EjercicioE2.RoofBuilding" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="roof" source="EjercicioE2.SportCenterBuilding" target="EjercicioE2.RoofBuilding" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="EjercicioE2.SportCenterBuilding" target="EjercicioE2.Building"/>
+    <IsRelation name="is" source="EjercicioE2.OfficeBuilding" target="EjercicioE2.Building"/>
+    <HasRelation name="buildings" source="EjercicioE2.Service" target="EjercicioE2.Building" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Building&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

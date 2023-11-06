@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EjercicioE3">
+  <ClassDiagramComponents>
+    <Class name="Camping" package="EjercicioE3" visibility="public" isFinal="true" xPosition="-504.0" yPosition="-40.0">
+      <Fields>
+        <Field name="maxNumberOfTent" type="int" visibility="private"/>
+        <Field name="hasRestaurant" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="maxNumberOfTent"/>
+          <Argument type="int" name="numberOfAvailableBathrooms"/>
+          <Argument type="boolean" name="hasRestaurant"/>
+          <Argument type="boolean" name="prrivate"/>
+          <Argument type="int" name="occupiedArea"/>
+          <Argument type="String" name="housingName"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="town"/>
+          <Argument type="String" name="managerName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMaxNumberOfTent" returnType="int" visibility="public"/>
+        <Method name="getNumberOfAvailableBathrooms" returnType="int" visibility="public"/>
+        <Method name="isHasRestaurant" returnType="boolean" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="EjercicioE3" package="EjercicioE3" visibility="public" xPosition="34.0" yPosition="472.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ExtraHousing" package="EjercicioE3" visibility="public" isAbstract="true" xPosition="219.0" yPosition="15.0">
+      <Fields>
+        <Field name="prrivate" type="boolean" visibility="protected"/>
+        <Field name="occupiedArea" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="boolean" name="prrivate"/>
+          <Argument type="int" name="occupiedArea"/>
+          <Argument type="String" name="housingName"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="town"/>
+          <Argument type="String" name="managerName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FiveStarHotel" package="EjercicioE3" visibility="public" isFinal="true" xPosition="-685.0" yPosition="146.0">
+      <Fields>
+        <Field name="gym" type="GymType" visibility="private"/>
+        <Field name="restaurantName" type="String" visibility="private"/>
+        <Field name="restaurantCapacity" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="GymType" name="gym"/>
+          <Argument type="String" name="restaurantName"/>
+          <Argument type="int" name="restaurantCapacity"/>
+          <Argument type="int" name="numberOfConferenceRooms"/>
+          <Argument type="int" name="numberOfSuites"/>
+          <Argument type="int" name="numberOfLimusines"/>
+          <Argument type="int" name="numberOfRooms"/>
+          <Argument type="int" name="numberOfBeds"/>
+          <Argument type="int" name="numberOfFloors"/>
+          <Argument type="String" name="housingName"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="town"/>
+          <Argument type="String" name="managerName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getGym" returnType="GymType" visibility="public"/>
+        <Method name="getRestaurantName" returnType="String" visibility="public"/>
+        <Method name="getRestaurantCapacity" returnType="int" visibility="public"/>
+        <Method name="getNumberOfConferenceRooms" returnType="int" visibility="public"/>
+        <Method name="getNumberOfSuites" returnType="int" visibility="public"/>
+        <Method name="getNumberOfLimusines" returnType="int" visibility="public"/>
+        <Method name="setRoomPrice" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="FourStarHotel" package="EjercicioE3" visibility="public" isFinal="true" xPosition="232.0" yPosition="320.0">
+      <Fields>
+        <Field name="gym" type="GymType" visibility="private"/>
+        <Field name="restaurantName" type="String" visibility="private"/>
+        <Field name="restaurantCapacity" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="GymType" name="gym"/>
+          <Argument type="String" name="restaurantName"/>
+          <Argument type="int" name="restaurantCapacity"/>
+          <Argument type="int" name="numberOfRooms"/>
+          <Argument type="int" name="numberOfBeds"/>
+          <Argument type="int" name="numberOfFloors"/>
+          <Argument type="String" name="housingName"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="town"/>
+          <Argument type="String" name="managerName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getGym" returnType="GymType" visibility="public"/>
+        <Method name="getRestaurantName" returnType="String" visibility="public"/>
+        <Method name="getRestaurantCapacity" returnType="int" visibility="public"/>
+        <Method name="setRoomPrice" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Hotel" package="EjercicioE3" visibility="public" isAbstract="true" xPosition="521.0" yPosition="162.0">
+      <Fields>
+        <Field name="numberOfRooms" type="int" visibility="protected"/>
+        <Field name="roomPrice" type="double" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="numberOfRooms"/>
+          <Argument type="int" name="numberOfBeds"/>
+          <Argument type="int" name="numberOfFloors"/>
+          <Argument type="String" name="housingName"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="town"/>
+          <Argument type="String" name="managerName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="setRoomPrice" returnType="void" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Residence" package="EjercicioE3" visibility="public" isFinal="true" xPosition="231.0" yPosition="17.0">
+      <Fields>
+        <Field name="numberOfRooms" type="int" visibility="private"/>
+        <Field name="hasDisccount" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="numberOfRooms"/>
+          <Argument type="boolean" name="hasDisccount"/>
+          <Argument type="boolean" name="hasSportField"/>
+          <Argument type="boolean" name="prrivate"/>
+          <Argument type="int" name="occupiedArea"/>
+          <Argument type="String" name="housingName"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="town"/>
+          <Argument type="String" name="managerName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNumberOfRooms" returnType="int" visibility="public"/>
+        <Method name="isHasDisccount" returnType="boolean" visibility="public"/>
+        <Method name="isHasSportField" returnType="boolean" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Service" package="EjercicioE3" visibility="public" xPosition="38.0" yPosition="213.0">
+      <Fields>
+        <Field name="housings" type="List&lt;TouristHousing&gt;" visibility="private" isStatic="true"/>
+        <Field name="hotels" type="List&lt;Hotel&gt;" visibility="private" isStatic="true"/>
+        <Field name="residences" type="List&lt;ExtraHousing&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="createHousings" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="setAllPrices" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="showHousings" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="TouristHousing" package="EjercicioE3" visibility="public" isAbstract="true" xPosition="-41.0" yPosition="320.0">
+      <Fields>
+        <Field name="housingName" type="String" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="housingName"/>
+          <Argument type="String" name="address"/>
+          <Argument type="String" name="town"/>
+          <Argument type="String" name="managerName"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="toString" returnType="String" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Enum name="GymType" package="EjercicioE3" visibility="public" xPosition="781.0" yPosition="507.0">
+      <Literals>
+        <Literal name="A"/>
+        <Literal name="B"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="EjercicioE3.Camping" target="EjercicioE3.ExtraHousing"/>
+    <UseRelation source="EjercicioE3.FourStarHotel" target="EjercicioE3.GymType" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="EjercicioE3.Hotel" target="EjercicioE3.TouristHousing"/>
+    <IsRelation name="is" source="EjercicioE3.ExtraHousing" target="EjercicioE3.TouristHousing"/>
+    <HasRelation name="hotels" source="EjercicioE3.Service" target="EjercicioE3.Hotel" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Hotel&gt;"/>
+    <HasRelation name="residences" source="EjercicioE3.Service" target="EjercicioE3.ExtraHousing" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;ExtraHousing&gt;"/>
+    <IsRelation name="is" source="EjercicioE3.FiveStarHotel" target="EjercicioE3.Hotel"/>
+    <IsRelation name="is" source="EjercicioE3.Residence" target="EjercicioE3.ExtraHousing"/>
+    <HasRelation name="gym" source="EjercicioE3.FiveStarHotel" target="EjercicioE3.GymType" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="EjercicioE3.FourStarHotel" target="EjercicioE3.Hotel"/>
+    <HasRelation name="gym" source="EjercicioE3.FourStarHotel" target="EjercicioE3.GymType" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="housings" source="EjercicioE3.Service" target="EjercicioE3.TouristHousing" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;TouristHousing&gt;"/>
+    <UseRelation source="EjercicioE3.FiveStarHotel" target="EjercicioE3.GymType" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

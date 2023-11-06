@@ -1,9 +1,7 @@
 
 package Ejercicio2;
 
-import java.awt.Color;
 import java.util.Scanner;
-
 
 // @author new53
  
@@ -15,8 +13,7 @@ public class Electrodomestic {
     public Electrodomestic() {
     }
 
-    public Electrodomestic(double price, String color, String loadType, int weight) {
-        this.price = price;
+    public Electrodomestic(String color, String loadType, int weight) {       
         this.weight = weight; 
         this.color = color;
         this.loadType = loadType;
@@ -24,10 +21,6 @@ public class Electrodomestic {
 
     public double getPrice() {
         return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
     }
 
     public String getColor() {
@@ -88,7 +81,7 @@ public class Electrodomestic {
     
     public void createElectrodomestic(){
         Scanner read = new Scanner(System.in); 
-        setPrice(1000.d);
+        this.price = 1000.0d;
         System.out.print("Type your electrodomestic color: ");
         String colorE = read.nextLine();
         setColor(colorE);
@@ -102,9 +95,29 @@ public class Electrodomestic {
         setWeight(read.nextInt());
         read.nextLine();       
     }
+    
+    public void finalPrice(){
+        for(LoadType i : LoadType.values()){
+            if(i.toString().equalsIgnoreCase(getLoadType())){
+                this.price = getPrice() + i.getPriceE();
+                break;
+            }
+        }
+        System.out.println("¡Price by letter corrected!");
+        if(getWeight() >= 1.0 && getWeight() <= 19.0){
+            this.price = getPrice() + 100.0;
+        }else if(getWeight() >= 20.0 && getWeight() <= 49.0){
+            this.price = getPrice() + 500.0;
+        }else if(getWeight() >= 50.0 && getWeight() <= 79.0){
+            this.price = getPrice() + 800.0;
+        }else if(getWeight() >= 80.0){
+            this.price = getPrice() + 1000.0;
+        }
+        System.out.println("¡Price corrected successfully!");
+    }
 
     @Override
     public String toString() {
-        return "Electrodomestic{" + "price=" + price + ", color=" + color + ", loadType=" + loadType + ", weight=" + weight + '}';
+        return "Electrodomestic{" + "price=" + price + ", color=" + color + ", load Type=" + loadType + ", weight=" + weight + '}';
     } 
 }

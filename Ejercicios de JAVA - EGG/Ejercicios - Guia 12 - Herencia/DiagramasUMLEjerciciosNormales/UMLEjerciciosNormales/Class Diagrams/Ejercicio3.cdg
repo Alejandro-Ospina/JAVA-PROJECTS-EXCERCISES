@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Ejercicio3">
+  <ClassDiagramComponents>
+    <Class name="Ejercicio3" package="Ejercicio3" visibility="public" xPosition="152.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ElectrodomesticList" package="Ejercicio3" visibility="public" xPosition="437.0" yPosition="20.0">
+      <Fields>
+        <Field name="electrodomesticList" type="List&lt;Electrodomestic&gt;" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="createElectrodomesticList" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="totalPrice" returnType="double" visibility="public" isStatic="true"/>
+        <Method name="listDetails" returnType="void" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

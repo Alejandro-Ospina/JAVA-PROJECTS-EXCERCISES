@@ -14,7 +14,7 @@ public class WaterWeapon {
 
     public WaterWeapon() {
     }
-    
+      
     public static int getBarrelPosition() {
         return barrelPosition;
     }

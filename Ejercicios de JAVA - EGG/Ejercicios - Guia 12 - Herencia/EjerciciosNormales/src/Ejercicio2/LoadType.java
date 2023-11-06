@@ -12,9 +12,13 @@ package Ejercicio2;
 public enum LoadType {
     A(1000.0d),B(800.0d),C(600.0d),D(500.0d),E(300.0d),F(100.0d);
     
-    private final double price;
+    private final double priceE;
     
-    LoadType(double price){
-        this.price = price;
+    LoadType(double priceE){
+        this.priceE = priceE;
     }
+
+    public double getPriceE() {
+        return priceE;
+    }  
 }

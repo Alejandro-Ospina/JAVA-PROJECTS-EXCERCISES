@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="EjercicioE1">
+  <ClassDiagramComponents>
+    <Class name="EjercicioE1" package="EjercicioE1" visibility="public" xPosition="-5.0" yPosition="428.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="LuxuryYacht" package="EjercicioE1" visibility="public" xPosition="-492.0" yPosition="117.0">
+      <Fields>
+        <Field name="powerCVLuxuryYacht" type="double" visibility="private"/>
+        <Field name="cabinNumberLuxuryYacht" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="powerCVLuxuryYacht"/>
+          <Argument type="int" name="cabinNumberLuxuryYacht"/>
+          <Argument type="long" name="registration"/>
+          <Argument type="int" name="length"/>
+          <Argument type="int" name="yearFabrication"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPowerCVLuxuryYacht" returnType="double" visibility="public"/>
+        <Method name="setPowerCVLuxuryYacht" returnType="void" visibility="public">
+          <Argument type="double" name="powerCVLuxuryYacht"/>
+        </Method>
+        <Method name="getCabinNumberLuxuryYacht" returnType="int" visibility="public"/>
+        <Method name="setCabinNumberLuxuryYacht" returnType="void" visibility="public">
+          <Argument type="int" name="cabinNumberLuxuryYacht"/>
+        </Method>
+        <Method name="module" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="MotorShips" package="EjercicioE1" visibility="public" xPosition="250.0" yPosition="206.0">
+      <Fields>
+        <Field name="powerCVmotorShips" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="double" name="powerCVmotorShips"/>
+          <Argument type="long" name="registration"/>
+          <Argument type="int" name="length"/>
+          <Argument type="int" name="yearFabrication"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPowerCVmotorShips" returnType="double" visibility="public"/>
+        <Method name="setPowerCVmotorShips" returnType="void" visibility="public">
+          <Argument type="double" name="powerCVmotorShips"/>
+        </Method>
+        <Method name="module" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="RentMooring" package="EjercicioE1" visibility="public" xPosition="326.0" yPosition="-88.0">
+      <Fields>
+        <Field name="customerName" type="String" visibility="private"/>
+        <Field name="customerID" type="long" visibility="private"/>
+        <Field name="rentDate" type="LocalDate" visibility="private"/>
+        <Field name="mooringPosition" type="MooringPosition" visibility="private"/>
+        <Field name="ship" type="Ship" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="customerName"/>
+          <Argument type="long" name="customerID"/>
+          <Argument type="LocalDate" name="rentDate"/>
+          <Argument type="LocalDate" name="devolutionDate"/>
+          <Argument type="MooringPosition" name="mooringPosition"/>
+          <Argument type="Ship" name="ship"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCustomerName" returnType="String" visibility="public"/>
+        <Method name="getCustomerID" returnType="long" visibility="public"/>
+        <Method name="getRentDate" returnType="LocalDate" visibility="public"/>
+        <Method name="getDevolutionDate" returnType="LocalDate" visibility="public"/>
+        <Method name="getMooringPosition" returnType="MooringPosition" visibility="public"/>
+        <Method name="getShip" returnType="Ship" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="RentService" package="EjercicioE1" visibility="public" xPosition="615.0" yPosition="8.0">
+      <Fields>
+        <Field name="rent" type="RentMooring" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="rentShip" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="moduleDetails" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="MooringRentDetails" returnType="void" visibility="public" isStatic="true"/>
+        <Method name="totalRent" returnType="double" visibility="public" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="SailBoat" package="EjercicioE1" visibility="public" xPosition="353.0" yPosition="404.0">
+      <Fields>
+        <Field name="mastNumber" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="mastNumber"/>
+          <Argument type="long" name="registration"/>
+          <Argument type="int" name="length"/>
+          <Argument type="int" name="yearFabrication"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getMastNumber" returnType="int" visibility="public"/>
+        <Method name="setMastNumber" returnType="void" visibility="public">
+          <Argument type="int" name="mastNumber"/>
+        </Method>
+        <Method name="module" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Ship" package="EjercicioE1" visibility="public" isAbstract="true" xPosition="168.0" yPosition="278.0">
+      <Fields>
+        <Field name="registration" type="long" visibility="protected"/>
+        <Field name="length" type="int" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="long" name="registration"/>
+          <Argument type="int" name="length"/>
+          <Argument type="int" name="yearFabrication"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="module" returnType="double" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Enum name="MooringPosition" package="EjercicioE1" visibility="public" xPosition="17.0" yPosition="29.0">
+      <Literals>
+        <Literal name="PORT"/>
+        <Literal name="STARBOARD"/>
+        <Literal name="STERN"/>
+        <Literal name="BOW"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <UseRelation source="EjercicioE1.RentMooring" target="EjercicioE1.Ship" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="rent" source="EjercicioE1.RentService" target="EjercicioE1.RentMooring" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ship" source="EjercicioE1.RentMooring" target="EjercicioE1.Ship" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="EjercicioE1.RentMooring" target="EjercicioE1.MooringPosition" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="EjercicioE1.LuxuryYacht" target="EjercicioE1.Ship"/>
+    <IsRelation name="is" source="EjercicioE1.SailBoat" target="EjercicioE1.Ship"/>
+    <IsRelation name="is" source="EjercicioE1.MotorShips" target="EjercicioE1.Ship"/>
+    <HasRelation name="mooringPosition" source="EjercicioE1.RentMooring" target="EjercicioE1.MooringPosition" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
