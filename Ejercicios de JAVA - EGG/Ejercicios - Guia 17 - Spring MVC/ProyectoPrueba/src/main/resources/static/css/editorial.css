@@ -60,4 +60,29 @@ and open the template in the editor.
     padding: 5px 5px 5px 5px;
     border-radius: 5px;
     background-color: beige;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.submit-button button:hover {
+    background-color: lightgrey;
+}
+
+.case-success {
+    margin-top: 10px;
+    border-radius: 7px;
+    background-color: green;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.case-failed {
+    margin-top: 10px;
+    border-radius: 7px;
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
 }

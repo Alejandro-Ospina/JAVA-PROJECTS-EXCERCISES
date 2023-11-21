@@ -33,7 +33,7 @@ public class AutorService {
     }
     
     private void validarDatos(String nombreAutor) throws Excepciones.CamposVacios{
-        if (nombreAutor == null){
+        if (nombreAutor == null || nombreAutor.isEmpty()){
             throw new Excepciones.CamposVacios ("El campo del nombre del autor no puede ser vacío");
         }
     }
@@ -50,7 +50,20 @@ public class AutorService {
         autorRepo.save(autor);
     }
     
-    public List<Autor> listarEditoriales(){
+    public List<Autor> listarAutores(){
         return autorRepo.findAll();
+    }
+    
+    @Transactional
+    public void eliminarAutor(String idAutor) throws Excepciones.EntidadNoEncontrada{
+        Optional<Autor> resAutor = autorRepo.findById(idAutor); 
+        if(!resAutor.isPresent()){
+            throw new Excepciones.EntidadNoEncontrada ("No se encontró un autor asociado");
+        }
+        autorRepo.delete(resAutor.get());
+    }
+    
+    public Autor obtenerAutorId(String idAutor){
+        return autorRepo.findById(idAutor).get();
     }
 }

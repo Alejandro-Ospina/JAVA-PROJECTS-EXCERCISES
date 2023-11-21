@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Formulario de autor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/autor.css" type="text/css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <header>
+            <div class="autor-header">
+                <h1>
+                    Lista de autores
+                </h1>
+            </div>
+        </header>
+        <hr>
+        <div class="form-container">
+            <table class="Gtable">
+                <thead>
+                    <tr>
+                        <th scope="col" rowspan="2" width=33.33%>Id del Autor</th>
+                        <th scope="col" rowspan="2" width=33.33%>Nombre del autor</th>
+                        <th scope="col" colspan="2" width=33.33%>Acciones</th>
+                    </tr>
+                    <tr>
+                        <th scope="col" width=16%>Editar</th>
+                        <th scope="col" width=16%>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody th:each="autor : ${listaAutores}">
+                    <tr>
+                        <td th:text="${autor.id}"></td>
+                        <td>
+                            <div th:if="${cambiar_nombre}">
+                                <form th:action="@{/autor/editar_autor}" method="POST">
+                                    <div class="div-class1">  
+                                        <input type="hidden" name="autorId" th:value="${autor.id}">
+                                        <input type="text" id="text-place" name="nombreAutor" placeholder="Nombre del autor"> 
+                                        <button type="submit">Actualizar autor</button> 
+                                    </div>
+                                </form>
+                            </div>
+                            <div th:unless="${cambiar_nombre}">
+                                <p th:text="${autor.nombre}"></p>
+                            </div>   
+                        </td>
+                        <td>
+                            <div class="edit-icon">
+                                <form th:action="@{/autor/editar_autor}" method="POST">
+                                    <input type="hidden" name="autorId" th:value="${autor.id}">
+                                    <input type="hidden" name="nombreAutor" th:value="${autor.nombre}">
+                                    <button type="submit"><i class="bi bi-pencil-square"></i></button>                                     
+                                </form>                               
+                            </div>
+                        </td>
+                        <td>
+                            <div class="delete-icon">
+                                <form th:action="@{/autor/eliminar_autor}" method="POST">
+                                    <input type="hidden" name="autorId" th:value="${autor.id}">
+                                    <button type="submit"><i class="bi bi-trash"></i></button>                         
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>                    
+        </div>
+        <hr>
+    </body>
+</html>

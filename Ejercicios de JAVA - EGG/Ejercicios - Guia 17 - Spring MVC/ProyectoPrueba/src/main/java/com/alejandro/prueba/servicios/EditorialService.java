@@ -33,7 +33,7 @@ public class EditorialService {
     }
     
     private void validarDatos(String nombreEditorial) throws Excepciones.CamposVacios{
-        if (nombreEditorial == null){
+        if (nombreEditorial == null || nombreEditorial.isEmpty()){
             throw new Excepciones.CamposVacios ("El campo del nombre de la editorial no puede ser vacío");
         }
     }
@@ -52,5 +52,18 @@ public class EditorialService {
     
     public List<Editorial> listarEditoriales(){
         return editorialRepo.findAll();
+    }
+    
+    @Transactional
+    public void eliminarEditorial(String idEditorial) throws Excepciones.EntidadNoEncontrada{
+        Optional<Editorial> resEditorial = editorialRepo.findById(idEditorial); 
+        if(!resEditorial.isPresent()){
+            throw new Excepciones.EntidadNoEncontrada ("No se encontró un autor asociado");
+        }
+        editorialRepo.delete(resEditorial.get());
+    } 
+    
+    public Editorial obtenerAutorId(String idEditorial){
+        return editorialRepo.findById(idEditorial).get();
     }
 }

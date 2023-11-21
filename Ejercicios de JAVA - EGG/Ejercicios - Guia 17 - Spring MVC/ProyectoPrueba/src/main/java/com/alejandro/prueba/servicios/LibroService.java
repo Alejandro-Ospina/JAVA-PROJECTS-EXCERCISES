@@ -60,16 +60,16 @@ public class LibroService {
         if (isbn == null){
             throw new Excepciones.CamposVacios ("El campo del isbn no puede ser vacío");
         }
-        if (titulo == null){
+        if (titulo == null || titulo.isEmpty()){
             throw new Excepciones.CamposVacios ("El campo del título no puede ser vacío");
         }
         if (ejemplares == null){
             throw new Excepciones.CamposVacios ("El campo de ejemplares no puede ser vacío");
         }
-        if (nombreAutor == null){
+        if (nombreAutor == null || nombreAutor.isEmpty()){
             throw new Excepciones.CamposVacios ("El campo del nombre de autor no puede ser vacío");
         }
-        if (nombreEditorial == null){
+        if (nombreEditorial == null || nombreEditorial.isEmpty()){
             throw new Excepciones.CamposVacios ("El campo del nombre de la editorial no puede ser vacío");
         }
     }

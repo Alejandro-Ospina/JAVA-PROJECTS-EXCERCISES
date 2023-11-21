@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Formulario de autor</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/autor.css" type="text/css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <header>
+            <div class="autor-header">
+                <h1>
+                    Lista de editoriales
+                </h1>
+            </div>
+        </header>
+        <hr>
+        <div class="form-container">
+            <table class="Gtable">
+                <thead>
+                    <tr>
+                        <th scope="col" rowspan="2" width=33.33%>Id de la editorial</th>
+                        <th scope="col" rowspan="2" width=33.33%>Nombre de la editorial</th>
+                        <th scope="col" colspan="2" width=33.33%>Acciones</th>
+                    </tr>
+                    <tr>
+                        <th scope="col" width=16%>Editar</th>
+                        <th scope="col" width=16%>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody th:each="editorial : ${listaEditoriales}">
+                    <tr>
+                        <td th:text="${editorial.id}"></td>
+                        <td th:text="${editorial.nombre}"></td>
+                        <td>
+                            <div class="edit-icon">
+                                <form th:action="@{/editorial/editar_editorial}" method="POST">
+                                    <input type="hidden" name="editorialId" th:value="${editorial.id}">
+                                    <button type="submit"><i class="bi bi-pencil-square"></i></button>                                     
+                                </form>                               
+                            </div>
+                        </td>
+                        <td>
+                            <div class="delete-icon">
+                                <form th:action="@{/editorial/eliminar_editorial}" method="POST">
+                                    <input type="hidden" name="editorialId" th:value="${editorial.id}">
+                                    <button type="submit"><i class="bi bi-trash"></i></button>                         
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>                    
+        </div>
+        <hr>
+    </body>
+</html>

@@ -52,7 +52,7 @@ and open the template in the editor.
     display: flex;
     justify-content: space-around;
     align-items: center;
-    align-content: center;
+    align-content: center;   
 }
 
 .submit-button button {
@@ -60,4 +60,103 @@ and open the template in the editor.
     padding: 5px 5px 5px 5px;
     border-radius: 5px;
     background-color: beige;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.submit-button button:hover {
+    background-color: lightgrey;
+}
+
+.case-success {
+    margin-top: 10px;
+    border-radius: 7px;
+    background-color: green;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.case-failed {
+    margin-top: 10px;
+    border-radius: 7px;
+    background-color: red;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.form-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.Gtable {
+    width: 100%; 
+    border-collapse: collapse;   
+}
+
+.g-class {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.edit-icon {
+    text-decoration: none; 
+    display: flex;
+    justify-content: center;
+}
+
+.edit-icon button{
+    border: none;
+    background-color: inherit; 
+}
+
+.edit-icon button i{
+    color: blue;
+    font-size: 15px;
+}
+
+.delete-icon{
+    text-decoration: none; 
+    display: flex;
+    justify-content: center;  
+}
+
+.delete-icon button{
+    border: none;
+    background-color: inherit; 
+}
+
+.delete-icon button i{
+    color: red;
+    font-size: 15px;
+}
+
+th, td{
+    border: 2px solid black;
+    padding: 8px;
+}
+
+#request-list {
+    margin-top: 40px;
+    text-decoration: none;
+}
+
+#but-style {
+    padding: 10px;
+    font-size: 15pt;
+    border-radius: 5px;
+    background-color: lemonchiffon;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#but-style:hover {
+    background-color: lightgrey;
 }
