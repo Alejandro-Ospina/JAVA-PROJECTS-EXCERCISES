@@ -9,5 +9,4 @@ class EggNewsApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }

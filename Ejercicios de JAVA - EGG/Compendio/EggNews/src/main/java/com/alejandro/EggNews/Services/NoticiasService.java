@@ -18,7 +18,7 @@ public class NoticiasService {
     @Autowired
     private NewsRepository neRepo;
     
-    @Transactional (rollbackOn = Excepciones.class)
+    @Transactional (rollbackOn = Excepciones.CamposVaciosONulos.class)
     public void crearNoticia(String nombreNoticia, String cuerpoNoticia) throws 
             Excepciones.RegistroExistente, Excepciones.CamposVaciosONulos{
         validarDatos(nombreNoticia, cuerpoNoticia);
