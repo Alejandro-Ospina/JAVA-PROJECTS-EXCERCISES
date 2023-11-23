@@ -1,35 +1,44 @@
 
 package com.alejandro.EggNews.Entidades;
 
-import com.sun.tracing.dtrace.ArgsAttributes;
-import java.io.Serializable;
+import java.util.Calendar;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 
+
+
 // @author new53
+
+@Entity
 @Getter
 @Setter
 @NoArgsConstructor
-@Entity
-public class Noticias implements Serializable{
+public class Noticias{
     
     @Id
     @GeneratedValue (generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String idNoticia;
+    
+    @Column (length = 500, columnDefinition = "TEXT")
     private String nombreNoticia;
+    @Column (columnDefinition = "LONGTEXT")
     private String cuerpoNoticia;
+    @Temporal (TemporalType.TIMESTAMP)
+    private Calendar fechaCreacion;
 
-    public Noticias(String nombreNoticia, String cuerpoNoticia) {
+    public Noticias(String nombreNoticia, String cuerpoNoticia, Calendar fechaCreacion) {
         this.nombreNoticia = nombreNoticia;
         this.cuerpoNoticia = cuerpoNoticia;
+        this.fechaCreacion = fechaCreacion;
     }    
 }

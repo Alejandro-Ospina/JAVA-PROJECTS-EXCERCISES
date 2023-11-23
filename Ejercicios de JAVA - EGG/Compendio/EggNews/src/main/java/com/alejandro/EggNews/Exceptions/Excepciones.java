@@ -35,4 +35,34 @@ public class Excepciones {
             super(string);
         }
     }
+    
+    /**
+     * Esta clase maneja una excepción de registros no encontrados en base de 
+     * datos.
+     */
+    public static class RegistroNoExistente extends Exception{
+        
+        /**
+         * Esta excepción se lanza cuando no se encuentra un registro asociado en 
+         * la base de datos.
+         * @param string 
+         */
+        public RegistroNoExistente(String string) {
+            super(string);
+        }
+        
+    }
+    
+    /**
+     * La clase maneja una excepción de desbordamiento de variables.
+     */
+    public static class ExceededSize extends Exception{
+        /**
+         * La excepción se lanza si se excede el tamaño de la variable.
+         * @param string 
+         */
+        public ExceededSize(String string) {
+            super(string);
+        }
+    }
 }
