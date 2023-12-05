@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <head th:replace="/Fragments/head :: head"></head>
+    <body>
+        <nav th:replace="/Fragments/navbar :: nav"></nav> 
+        <div class="container-fluid">
+            <form th:action="@{/editar_noticias/actualizar}" method="POST">
+                <input type="hidden" name="idNoti" th:value="${id}">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Titulo de la noticia</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name= "tituloNoticia" placeholder="Escriba el título aquí" th:value="${titulo}">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Cuerpo de la noticia</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" name="cuerpoNoticia" rows="3" th:text="${cuerpo}"></textarea>
+                </div>
+                <div class="per-container">
+                    <button class="btn btn-primary" type="submit">Actualizar noticia</button>
+                    <a class="btn btn-primary" th:href="@{/editar_noticias}" role="button">Cancelar</a>
+                </div>
+                <div class="alert-container" th:if="${exito != null}">
+                    <div class="alert alert-success" role="alert" th:text="${exito}"></div>
+                </div>
+                <div class="alert-container" th:if="${fallo != null}">
+                    <div class="alert alert-danger" role="alert" th:text="${fallo}"></div>
+                </div>
+            </form>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,9 +1,9 @@
 
-package com.Alejandro.EggNewsLoginUsers.Services;
+package com.alejandro.EggNews.Services;
 
-import com.Alejandro.EggNewsLoginUsers.Entidades.Noticias;
-import com.Alejandro.EggNewsLoginUsers.Exceptions.Excepciones;
-import com.Alejandro.EggNewsLoginUsers.Repositories.NewsRepository;
+import com.alejandro.EggNews.Entidades.Noticias;
+import com.alejandro.EggNews.Exceptions.Excepciones;
+import com.alejandro.EggNews.Repositories.NewsRepository;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -17,13 +17,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class NoticiasService {
-    private final NewsRepository neRepo;
-
+    
     @Autowired
-    public NoticiasService(NewsRepository neRepo) {
-        this.neRepo = neRepo;
-    }
-
+    private NewsRepository neRepo;
+    
     @Transactional (rollbackFor = Excepciones.CamposVaciosONulos.class)
     public void crearNoticia(String nombreNoticia, String cuerpoNoticia) throws 
             Excepciones.RegistroExistente, Excepciones.CamposVaciosONulos, Excepciones.ExceededSize{

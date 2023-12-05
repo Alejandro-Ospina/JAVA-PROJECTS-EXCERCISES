@@ -11,10 +11,11 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class WebSecurityConfig {
     @Bean
-    public SecurityFilterChain securityFilterChain (HttpSecurity http) throws Exception {
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(authorize -> authorize.anyRequest().permitAll())
                 .httpBasic(Customizer.withDefaults())
-                .csrf(Customizer.withDefaults());
+                .csrf(Customizer.withDefaults())
+                .cors(Customizer.withDefaults());
         return http.build();
     }
 }
