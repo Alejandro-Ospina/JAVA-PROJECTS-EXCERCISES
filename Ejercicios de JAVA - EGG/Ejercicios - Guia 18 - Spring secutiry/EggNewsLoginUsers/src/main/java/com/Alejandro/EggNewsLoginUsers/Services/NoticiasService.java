@@ -8,7 +8,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
+
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -16,13 +17,10 @@ import org.springframework.transaction.annotation.Transactional;
 // @author new53
 
 @Service
+@RequiredArgsConstructor
 public class NoticiasService {
-    private final NewsRepository neRepo;
 
-    @Autowired
-    public NoticiasService(NewsRepository neRepo) {
-        this.neRepo = neRepo;
-    }
+    private final NewsRepository neRepo;
 
     @Transactional (rollbackFor = Excepciones.CamposVaciosONulos.class)
     public void crearNoticia(String nombreNoticia, String cuerpoNoticia) throws 

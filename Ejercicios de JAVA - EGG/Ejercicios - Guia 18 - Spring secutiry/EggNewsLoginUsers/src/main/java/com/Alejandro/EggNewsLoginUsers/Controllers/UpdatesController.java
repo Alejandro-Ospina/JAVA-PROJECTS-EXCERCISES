@@ -3,6 +3,7 @@ package com.Alejandro.EggNewsLoginUsers.Controllers;
 
 import com.Alejandro.EggNewsLoginUsers.Exceptions.Excepciones;
 import com.Alejandro.EggNewsLoginUsers.Services.NoticiasService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,11 +17,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 // @author new53
 @Controller
 @RequestMapping ("/editar_noticias")
+@RequiredArgsConstructor
 public class UpdatesController {
-    
-    @Autowired
-    private NoticiasService notServ;
-    
+
+    private final NoticiasService notServ;
+
     @GetMapping
     public String getListaNoticias(ModelMap model){
         if(notServ.listaNoticias().isEmpty()){

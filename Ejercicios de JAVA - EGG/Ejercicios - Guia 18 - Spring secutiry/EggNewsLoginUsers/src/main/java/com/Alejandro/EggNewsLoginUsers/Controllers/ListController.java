@@ -2,6 +2,7 @@
 package com.Alejandro.EggNewsLoginUsers.Controllers;
 
 import com.Alejandro.EggNewsLoginUsers.Services.NoticiasService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -13,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping ("/lista_noticias")
+@RequiredArgsConstructor
 public class ListController {
-    
-    @Autowired
-    private NoticiasService notService;
+
+    private final NoticiasService notService;
     
     @GetMapping
     public String getListaNoticias(ModelMap model){
@@ -26,5 +27,4 @@ public class ListController {
         model.addAttribute("listaNot", notService.listaNoticias());
         return "lista_noticias.html";
     }
-
 }

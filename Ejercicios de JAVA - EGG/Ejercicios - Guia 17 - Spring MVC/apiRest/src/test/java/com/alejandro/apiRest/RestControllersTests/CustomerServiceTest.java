@@ -37,7 +37,8 @@ public class CustomerServiceTest {
 
     @BeforeEach
     public void setUpObject(){
-        customerDTO = new CustomerDTO("pedro", "ppp@ppp.ppp", 333L);
+        customerDTO = new CustomerDTO("pedro",
+                "ppp@ppp.ppp", 333L);
     }
 
     @Test

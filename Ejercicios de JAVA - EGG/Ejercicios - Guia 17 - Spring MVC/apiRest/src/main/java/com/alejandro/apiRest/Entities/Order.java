@@ -19,7 +19,6 @@ public class Order {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long orderId;
     @JsonFormat (pattern = "yyyy-MM-dd")
-    @Temporal(TemporalType.DATE)
     private LocalDate date;
     @OneToOne (cascade = CascadeType.ALL)
     private Customer customer;

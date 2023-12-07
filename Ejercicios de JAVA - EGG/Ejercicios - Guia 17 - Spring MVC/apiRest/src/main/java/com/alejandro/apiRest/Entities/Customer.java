@@ -20,8 +20,7 @@ public class Customer {
     private String name;
 
     @Column(unique = true) // There might be two or more emails that a customer could share
-    @Email(message = "Invalid email!")
-    @Pattern(regexp = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$",
+    @Email(regexp = "^[a-zA-Z0-9_]+(?:\\.[a-zA-Z0-9_]+)*@(?:[a-zA-Z]+\\.)+[a-zA-Z]{2,3}$",
             message = "Invalid email!")
     private String email;
 

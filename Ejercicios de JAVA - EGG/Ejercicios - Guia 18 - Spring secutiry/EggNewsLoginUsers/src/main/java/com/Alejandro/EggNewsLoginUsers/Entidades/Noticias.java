@@ -28,6 +28,9 @@ public class Noticias{
     @Temporal(TemporalType.TIMESTAMP)
     private Calendar fechaCreacion;
 
+    @ManyToOne
+    private Periodista periodista;
+
     public Noticias(String nombreNoticia, String cuerpoNoticia, Calendar fechaCreacion) {
         this.nombreNoticia = nombreNoticia;
         this.cuerpoNoticia = cuerpoNoticia;

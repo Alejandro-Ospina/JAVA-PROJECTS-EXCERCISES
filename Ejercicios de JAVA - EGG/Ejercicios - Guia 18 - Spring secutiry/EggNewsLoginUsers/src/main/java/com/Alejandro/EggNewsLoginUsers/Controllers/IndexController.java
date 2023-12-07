@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 // @author new53
 
 @Controller
-@RequestMapping("/")
+@RequestMapping ("/login_users")
 public class IndexController {
     
     @GetMapping
     public String getIndex(){
-        return "index.html";
+        return "login_form.html";
     }
 }

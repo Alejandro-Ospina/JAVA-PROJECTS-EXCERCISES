@@ -65,7 +65,7 @@ body {
 }
 
 .welcome {
-    height: 50%;
+    height: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,6 +101,12 @@ body {
     flex-wrap: wrap;
     flex-direction: row;
     gap: 0.5rem; 
+}
+
+.button-container {
+    padding: 7px;
+    display: flex;
+    justify-content: center;
 }
 
 body {

@@ -1,5 +1,5 @@
 package com.Alejandro.EggNewsLoginUsers.UsersRole;
 
 public enum Roles {
-    ADMIN, USER;
+    ADMIN, USER, PERIODISTA;
 }

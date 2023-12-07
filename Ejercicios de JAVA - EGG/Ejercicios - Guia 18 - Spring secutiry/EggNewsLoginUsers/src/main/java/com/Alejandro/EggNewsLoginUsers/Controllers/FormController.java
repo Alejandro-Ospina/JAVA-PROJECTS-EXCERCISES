@@ -3,6 +3,7 @@ package com.Alejandro.EggNewsLoginUsers.Controllers;
 
 import com.Alejandro.EggNewsLoginUsers.Exceptions.Excepciones;
 import com.Alejandro.EggNewsLoginUsers.Services.NoticiasService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,11 +17,11 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("/crear_noticias")
+@RequiredArgsConstructor
 public class FormController {
-    
-    @Autowired
-    private NoticiasService notService;
-    
+
+    private final NoticiasService notService;
+
     @GetMapping
     public String getNoticiaForm(){
         return "new_form.html";
