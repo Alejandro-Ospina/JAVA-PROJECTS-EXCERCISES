@@ -16,15 +16,15 @@ public class WebConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(authorize ->
-                        authorize.requestMatchers("/login_users")
-                        .permitAll()
-                        .requestMatchers("/panelAdmin/**").hasAnyRole("ADMIN", "PERIODISTA")
-                        .anyRequest().authenticated())
+                        authorize
+                                .requestMatchers("/login_users", "/css/**", "/js/**", "/img/**", "/**").permitAll()
+                                .requestMatchers("/panelAdmin/**")
+                                .hasAnyRole("ADMIN", "PERIODISTA")
+                                .anyRequest().authenticated())
+                .headers(header ->  header.xssProtection(Customizer.withDefaults()))
                 .httpBasic(Customizer.withDefaults())
                 .csrf(csrf -> csrf.disable())
-                .cors(Customizer.withDefaults())
-                .sessionManagement(sessionManagement ->
-                        sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+                .cors(Customizer.withDefaults());
         return http.build();
     }
 }

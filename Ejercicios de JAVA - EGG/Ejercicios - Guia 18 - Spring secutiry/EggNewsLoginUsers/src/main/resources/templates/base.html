@@ -5,9 +5,9 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
-    <head th:replace="/Fragments/head :: head"></head>
+    <head th:replace="~{/Fragments/head :: head}"></head>
     <body> 
-        <nav th:replace="/Fragments/navbar :: nav"></nav> 
+        <nav th:replace="~{/Fragments/navbar :: nav}"></nav>
         <div class="ocean">
             <div class="wave"></div> 
             <div class="wave"></div>

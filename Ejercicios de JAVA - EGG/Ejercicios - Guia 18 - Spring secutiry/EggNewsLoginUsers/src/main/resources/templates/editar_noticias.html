@@ -6,9 +6,9 @@ and open the template in the editor.
 -->
 <!--suppress ALL -->
 <html xmlns:th="http://www.w3.org/1999/xhtml">
-    <head th:replace="/Fragments/head :: head"></head>
+    <head th:replace="~{/Fragments/head :: head}"></head>
     <body>
-        <nav th:replace="/Fragments/navbar :: nav"></nav>
+        <nav th:replace="~{/Fragments/navbar :: nav}"></nav>
         <div class="alert-container" th:if="${vacio != null}">
             <div class="alert alert-danger" role="alert" th:text="${vacio}"></div>
         </div>
