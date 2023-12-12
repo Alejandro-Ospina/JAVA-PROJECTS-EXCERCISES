@@ -18,6 +18,7 @@ public class WebConfiguration {
         http.authorizeHttpRequests(authorize ->
                         authorize
                                 .requestMatchers("/css/**", "/js/**", "/img/**", "/webjars/**").permitAll()
+                                .requestMatchers("/login_users/registrar_usuarios").permitAll()
                                 .requestMatchers("/crear_noticias/**").hasRole("PERIODISTA")
                                 .requestMatchers("/panelAdmin/**").hasAnyRole("ADMIN", "PERIODISTA")
                                 .anyRequest().authenticated())

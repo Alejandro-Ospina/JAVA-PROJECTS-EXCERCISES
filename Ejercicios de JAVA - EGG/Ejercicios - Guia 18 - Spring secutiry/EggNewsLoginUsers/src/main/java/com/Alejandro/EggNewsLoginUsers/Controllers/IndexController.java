@@ -16,4 +16,9 @@ public class IndexController {
     public String getIndex(){
         return "login_form.html";
     }
+
+    @GetMapping ("/registrar_usuarios")
+    public String formularioRegistro(){
+        return "Register_user";
+    }
 }

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="~{/Fragments/head :: head}"></head>
+<body>
+<nav th:replace="~{/Fragments/navbartwo :: nav}"></nav>
+<form th:action="@{/login_users/crear_usuarios}" method="POST">
+    <div class="card text-center">
+        <div class="card-header">
+            Registro de usuarios
+        </div>
+        <div class="card-body">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" name="userName" class="form-control" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="email" class="form-control" placeholder="Correo electrónico" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <span class="input-group-text" id="basic-addon2">@example.com</span>
+            </div>
+            <div class="row g-3 align-items-center">
+                <div class="col-auto">
+                    <label for="inputPassword6" class="col-form-label">Contraseña</label>
+                </div>
+                <div class="col-auto">
+                    <input type="password" name="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                </div>
+            </div>
+        </div>
+        <div class="card-footer text-body-secondary">
+            <input class="btn btn-primary" type="submit" value="Crear usuario">
+            <a class="btn btn-primary" th:href="@{/login_users}" role="button">Cancelar</a>
+        </div>
+    </div>
+</form>
+</body>
+</html>
