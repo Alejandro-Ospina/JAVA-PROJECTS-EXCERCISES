@@ -17,12 +17,16 @@ public class WebConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(authorize ->
                         authorize
-                                .requestMatchers("/login_users", "/css/**", "/js/**", "/img/**", "/**").permitAll()
-                                .requestMatchers("/panelAdmin/**")
-                                .hasAnyRole("ADMIN", "PERIODISTA")
+                                .requestMatchers("/css/**", "/js/**", "/img/**", "/webjars/**").permitAll()
+                                .requestMatchers("/crear_noticias/**").hasRole("PERIODISTA")
+                                .requestMatchers("/panelAdmin/**").hasAnyRole("ADMIN", "PERIODISTA")
                                 .anyRequest().authenticated())
-                .headers(header ->  header.xssProtection(Customizer.withDefaults()))
-                .httpBasic(Customizer.withDefaults())
+                .formLogin(flogin ->
+                        flogin.loginPage("/login_users").permitAll())
+                .logout(logout -> logout.deleteCookies().logoutUrl("/logout_users")
+                        .logoutSuccessUrl("/login_users?logout_users").permitAll())
+                .headers(header -> header.xssProtection(Customizer.withDefaults())
+                        .cacheControl(cacheControlConfig -> cacheControlConfig.disable()))
                 .csrf(csrf -> csrf.disable())
                 .cors(Customizer.withDefaults());
         return http.build();
