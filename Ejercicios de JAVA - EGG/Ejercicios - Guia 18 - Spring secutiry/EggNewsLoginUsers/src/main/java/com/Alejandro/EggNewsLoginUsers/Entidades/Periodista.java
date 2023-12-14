@@ -16,10 +16,11 @@ public final class Periodista extends Usuarios{
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "periodista")
     private List<Noticias> noticiasList;
+    @Column (nullable = false)
+    private Long sueldoMensual;
 
-    private Integer sueldoMensual;
-
-    public Periodista(String userName, String email, String password, Roles rol) {
+    public Periodista(String userName, String email, String password, Roles rol, Long sueldoMensual) {
         super(userName, email, password, rol);
+        this.sueldoMensual = sueldoMensual;
     }
 }
