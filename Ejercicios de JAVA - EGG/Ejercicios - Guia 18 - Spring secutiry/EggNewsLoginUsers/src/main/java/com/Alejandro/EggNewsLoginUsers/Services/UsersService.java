@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class UsersService implements UserService{
+public class UsersService extends UserService{
 
     private final UsuariosRepository usuariosRepository;
     private final PeriodistaRepository periodistaRepository;
@@ -63,11 +63,55 @@ public class UsersService implements UserService{
 
     @Transactional
     public void crearPeriodista(String username, String email, String password, Long sueldo) throws Excepciones.RegistroExistente {
-        Optional<Periodista> usuario = periodistaRepository.findByName(username);
+        Optional<Periodista> usuario = periodistaRepository.findByUserName(username);
         Optional<Periodista> usuario2 = periodistaRepository.findByEmail(email);
         if(usuario.isPresent() || usuario2.isPresent()){
             throw new Excepciones.RegistroExistente("Ya existe un periodista con el nombre o email establecidos");
         }
         usuariosRepository.save(new Periodista(username, email, password, Roles.PERIODISTA, sueldo));
+    }
+
+    @Transactional
+    public void darDeBajaPeriodista(String idPeriodista) throws Excepciones.RegistroNoExistente {
+        Optional<Periodista> periodista = periodistaRepository.findById(idPeriodista);
+        if(!periodista.isPresent()){
+            throw new Excepciones.RegistroNoExistente("No existe un periodista con el id dado");
+        }
+        Periodista periodista1 = periodista.get();
+        periodista1.setActivo(false);
+        periodistaRepository.save(periodista1);
+    }
+
+    @Transactional
+    public void actualizarPeriodista (String idPeriodista, String userName, String email, Long sueldoMensual) throws Excepciones.RegistroNoExistente {
+        Optional<Periodista> periodista = periodistaRepository.findById(idPeriodista);
+        if(!periodista.isPresent()){
+            throw new Excepciones.RegistroNoExistente("No existe un periodista con el id dado");
+        }
+        Periodista periodista1 = periodista.get();
+        periodista1.setUserName(userName); periodista1.setEmail(email); periodista1.setSueldoMensual(sueldoMensual);
+        periodistaRepository.save(periodista1);
+    }
+
+    @Transactional
+    public void actualizarUsuario (String idUsuario, String userName, String email) throws Excepciones.RegistroNoExistente {
+        Optional<Usuarios> usuario = usuariosRepository.findById(idUsuario);
+        if(!usuario.isPresent()){
+            throw new Excepciones.RegistroNoExistente("No existe un usuario con el id dado");
+        }
+        Usuarios usuarios = usuario.get();
+        usuarios.setUserName(userName); usuarios.setEmail(email);
+        usuariosRepository.save(usuarios);
+    }
+
+    @Transactional
+    public void darDeBajaUsuario (String idUsuario) throws Excepciones.RegistroNoExistente {
+        Optional<Usuarios> usuario = usuariosRepository.findById(idUsuario);
+        if(!usuario.isPresent()){
+            throw new Excepciones.RegistroNoExistente("No existe un usuario con el id dado");
+        }
+        Usuarios usuarios = usuario.get();
+        usuarios.setActivo(false);
+        usuariosRepository.save(usuarios);
     }
 }
