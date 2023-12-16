@@ -74,7 +74,7 @@ public class UsersService extends UserService{
     @Transactional
     public void darDeBajaPeriodista(String idPeriodista) throws Excepciones.RegistroNoExistente {
         Optional<Periodista> periodista = periodistaRepository.findById(idPeriodista);
-        if(!periodista.isPresent()){
+        if(periodista.isEmpty()){
             throw new Excepciones.RegistroNoExistente("No existe un periodista con el id dado");
         }
         Periodista periodista1 = periodista.get();
@@ -85,7 +85,7 @@ public class UsersService extends UserService{
     @Transactional
     public void actualizarPeriodista (String idPeriodista, String userName, String email, Long sueldoMensual) throws Excepciones.RegistroNoExistente {
         Optional<Periodista> periodista = periodistaRepository.findById(idPeriodista);
-        if(!periodista.isPresent()){
+        if(periodista.isEmpty()){
             throw new Excepciones.RegistroNoExistente("No existe un periodista con el id dado");
         }
         Periodista periodista1 = periodista.get();
@@ -96,7 +96,7 @@ public class UsersService extends UserService{
     @Transactional
     public void actualizarUsuario (String idUsuario, String userName, String email) throws Excepciones.RegistroNoExistente {
         Optional<Usuarios> usuario = usuariosRepository.findById(idUsuario);
-        if(!usuario.isPresent()){
+        if(usuario.isEmpty()){
             throw new Excepciones.RegistroNoExistente("No existe un usuario con el id dado");
         }
         Usuarios usuarios = usuario.get();
@@ -107,7 +107,7 @@ public class UsersService extends UserService{
     @Transactional
     public void darDeBajaUsuario (String idUsuario) throws Excepciones.RegistroNoExistente {
         Optional<Usuarios> usuario = usuariosRepository.findById(idUsuario);
-        if(!usuario.isPresent()){
+        if(usuario.isEmpty()){
             throw new Excepciones.RegistroNoExistente("No existe un usuario con el id dado");
         }
         Usuarios usuarios = usuario.get();
