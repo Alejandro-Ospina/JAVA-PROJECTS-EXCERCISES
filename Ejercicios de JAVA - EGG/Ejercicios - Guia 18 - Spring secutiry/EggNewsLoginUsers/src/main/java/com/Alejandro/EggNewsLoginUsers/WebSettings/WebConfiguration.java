@@ -35,9 +35,12 @@ public class WebConfiguration {
                                 .requestMatchers("/panelAdmin/**").hasAnyRole("ADMIN", "PERIODISTA")
                                 .anyRequest().authenticated())
                 .formLogin(flogin ->
-                        flogin.loginPage("/login_users").permitAll())
+                        flogin.loginPage("/login_users")
+                                .failureUrl("/login_users")
+                                .loginProcessingUrl("/loginCheck")
+                                .permitAll())
                 .logout(logout -> logout.logoutUrl("/logout_users")
-                        .logoutSuccessUrl("/login_users?logout_users").permitAll()
+                        .logoutSuccessUrl("/login_users").permitAll()
                         .invalidateHttpSession(true)
                         .deleteCookies())
                 .headers(header -> header.xssProtection(Customizer.withDefaults())
@@ -54,7 +57,6 @@ public class WebConfiguration {
         DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();
         authenticationProvider.setUserDetailsService(userDetailsService);
         authenticationProvider.setPasswordEncoder(passwordEncoder);
-
         return new ProviderManager(authenticationProvider);
     }
 
