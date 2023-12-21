@@ -1,6 +1,7 @@
 package com.Alejandro.EggNewsLoginUsers.WebSettings;
 
 import com.Alejandro.EggNewsLoginUsers.Services.UsersService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,14 +18,12 @@ import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
+@RequiredArgsConstructor
 @EnableMethodSecurity (securedEnabled = true, jsr250Enabled = true, prePostEnabled = true)
 public class WebConfiguration {
 
     public final UsersService userService;
 
-    public WebConfiguration(UsersService userService){
-        this.userService = userService;
-    }
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(authorize ->
@@ -42,7 +41,7 @@ public class WebConfiguration {
                 .logout(logout -> logout.logoutUrl("/logout_users")
                         .logoutSuccessUrl("/login_users").permitAll()
                         .invalidateHttpSession(true)
-                        .deleteCookies())
+                        .deleteCookies("JSESSIONID"))
                 .headers(header -> header.xssProtection(Customizer.withDefaults())
                         .cacheControl(cacheControlConfig -> cacheControlConfig.disable()))
                 .csrf(csrf -> csrf.disable())

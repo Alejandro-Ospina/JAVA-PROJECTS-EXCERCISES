@@ -8,6 +8,7 @@ import com.Alejandro.EggNewsLoginUsers.Repositories.UsuariosRepository;
 import com.Alejandro.EggNewsLoginUsers.UsersRole.Roles;
 import jakarta.servlet.http.HttpSession;
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -23,32 +24,25 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class UsersService extends UserService{
 
     private final UsuariosRepository usuariosRepository;
     private final PeriodistaRepository periodistaRepository;
 
-    @Autowired
-    public UsersService(UsuariosRepository usuariosRepository, PeriodistaRepository periodistaRepository) {
-        this.usuariosRepository = usuariosRepository;
-        this.periodistaRepository = periodistaRepository;
-    }
-
     @Override
     public UserDetails loadUserByEmail(String email) throws UsernameNotFoundException {
-        Optional<Usuarios> usuario = usuariosRepository.obtenerUsuarioPorEmail(email);
-        if (usuario.isPresent()){
-            List<GrantedAuthority> permisos = new ArrayList<>();
-            GrantedAuthority grantedAuthority =
-                    new SimpleGrantedAuthority("ROLE_" + usuario.get().getRol().toString());
-            permisos.add(grantedAuthority);
-            ServletRequestAttributes attributes =
+        Usuarios usuario = usuariosRepository.obtenerUsuarioPorEmail(email).orElseThrow(
+                () -> new UsernameNotFoundException("Usuario no encontrado"));
+        List<GrantedAuthority> permisos = new ArrayList<>();
+        GrantedAuthority grantedAuthority =
+                new SimpleGrantedAuthority("ROLE_" + usuario.getRol().toString());
+        permisos.add(grantedAuthority);
+        ServletRequestAttributes attributes =
                     (ServletRequestAttributes) RequestContextHolder.currentRequestAttributes();
-            HttpSession httpSession = attributes.getRequest().getSession(true);
-            httpSession.setAttribute("usuario", usuario);
-            return new User(usuario.get().getEmail(), usuario.get().getPassword(), permisos);
-        }
-        return null;
+        HttpSession httpSession = attributes.getRequest().getSession(true);
+        httpSession.setAttribute("usuario", usuario);
+        return new User(usuario.getEmail(), usuario.getPassword(), permisos);
     }
 
     @Transactional
