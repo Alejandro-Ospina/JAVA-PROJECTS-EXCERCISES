@@ -4,6 +4,7 @@ import com.alejandro.apiRest.Entities.Customer;
 import com.alejandro.apiRest.Mappers.CustomerMapper;
 import com.alejandro.apiRest.Models.CustomerDTO;
 import com.alejandro.apiRest.Repositories.CustomerRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -14,12 +15,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class CustomerService{
 
-    @Autowired
-    private CustomerRepository customerRepository;
-    @Autowired
-    private CustomerMapper mapper;
+    private final CustomerRepository customerRepository;
+    private final CustomerMapper mapper;
 
     @Transactional
     public void createCustomer(CustomerDTO customerDTO) {

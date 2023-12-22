@@ -2,6 +2,7 @@ package com.alejandro.apiRest.Controllers;
 
 import com.alejandro.apiRest.Models.CustomerDTO;
 import com.alejandro.apiRest.Services.CustomerService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,10 +12,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping ("/customers")
+@RequiredArgsConstructor
 public class CustomerController {
 
-    @Autowired
-    private CustomerService customerService;
+    private final CustomerService customerService;
 
     @GetMapping
     @ResponseStatus (HttpStatus.OK)

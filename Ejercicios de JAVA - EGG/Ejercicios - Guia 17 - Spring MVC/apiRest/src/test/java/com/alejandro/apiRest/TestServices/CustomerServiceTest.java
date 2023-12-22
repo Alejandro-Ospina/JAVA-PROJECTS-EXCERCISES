@@ -1,15 +1,15 @@
-package com.alejandro.apiRest.RestControllersTests;
+package com.alejandro.apiRest.TestServices;
 
 import com.alejandro.apiRest.Entities.Customer;
 import com.alejandro.apiRest.Models.CustomerDTO;
 import com.alejandro.apiRest.Repositories.CustomerRepository;
 import com.alejandro.apiRest.Services.CustomerService;
+import lombok.RequiredArgsConstructor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 
@@ -23,9 +23,11 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
+@RequiredArgsConstructor
 public class CustomerServiceTest {
-    @Autowired
-    private CustomerService customerService;
+
+    private final CustomerService customerService;
+
 
     @MockBean
     private CustomerRepository customerRepository;
