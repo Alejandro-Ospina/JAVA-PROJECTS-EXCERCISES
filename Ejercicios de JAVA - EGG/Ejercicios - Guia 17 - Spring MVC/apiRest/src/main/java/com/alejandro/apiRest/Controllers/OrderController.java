@@ -2,6 +2,12 @@ package com.alejandro.apiRest.Controllers;
 
 import com.alejandro.apiRest.Models.OrderDTO;
 import com.alejandro.apiRest.Services.OrderService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.Parameters;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,6 +23,11 @@ public class OrderController {
 
     private final OrderService orderService;
 
+    @Operation(summary = "Get the order list in JSON format.", responses = {
+            @ApiResponse(description = "Successful action", responseCode = "200",
+                    content = @Content(mediaType = "application/json",
+                            schema = @Schema(implementation = List.class)))
+    })
     @GetMapping
     @ResponseStatus (HttpStatus.OK)
     public List<OrderDTO> getOrderList(){
